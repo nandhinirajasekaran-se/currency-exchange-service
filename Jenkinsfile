@@ -14,6 +14,18 @@ pipeline {
       }
     }
 
+    stage('Build JAR with Maven') {
+      steps {
+        sh 'mvn clean package -DskipTests'
+      }
+    }
+
+    stage('Verify JAR exists') {
+      steps {
+        sh 'ls -lh target/'
+      }
+    }
+
     stage('Build Docker Image') {
       steps {
         sh 'docker build -t $ECR_REPO:$IMAGE_TAG .'
