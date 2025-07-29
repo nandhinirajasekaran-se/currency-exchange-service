@@ -23,18 +23,19 @@ spec:
         app: currency-exchange
     spec:
       containers:
-      - image: mail2nandinirajasekar/mmv3-currency-exchange-service:0.0.2-SNAPSHOT
-        imagePullPolicy: IfNotPresent
-        name: mmv3-currency-exchange-service
-        readinessProbe:
-          httpGet:
-            port: 8000
-            path: /actuator/health/readiness
-        livenessProbe:
-          httpGet:
-            port: 8000
-            path: /actuator/health/liveness
-      restartPolicy: Always
+        - name: currency-exchange
+          image: 540607980171.dkr.ecr.us-west-2.amazonaws.com/currency-exchange-service:{{image.tag}}
+      #- image: mail2nandinirajasekar/mmv3-currency-exchange-service:0.0.2-SNAPSHOT
+          imagePullPolicy: IfNotPresent
+          readinessProbe:
+            httpGet:
+              port: 8000
+              path: /actuator/health/readiness
+          livenessProbe:
+            httpGet:
+              port: 8000
+              path: /actuator/health/liveness
+          restartPolicy: Always
 ---
 apiVersion: v1
 kind: Service
