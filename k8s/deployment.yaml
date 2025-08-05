@@ -36,4 +36,6 @@ spec:
               port: 8000
               path: /actuator/health/liveness
           restartPolicy: Always
+      imagePullSecrets:
+        - name: ecr-pull-secret
 ---
