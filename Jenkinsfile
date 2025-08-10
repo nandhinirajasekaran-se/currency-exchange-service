@@ -42,7 +42,7 @@ pipeline {
         }
       }
     }
-    stage(){
+    stage('Push to ARGO'){
       steps {
           argocd login a3cf9f226fb2344eb9c97b23a3ad46cf-2040838917.us-west-2.elb.amazonaws.com --insecure --sso-token $ARGOCD_AUTH_TOKEN
           argocd app sync currency-exchange
