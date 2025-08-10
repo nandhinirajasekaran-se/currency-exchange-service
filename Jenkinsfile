@@ -5,6 +5,7 @@ pipeline {
     AWS_REGION = 'us-west-2'
     ECR_REPO = '540607980171.dkr.ecr.us-west-2.amazonaws.com/currency-exchange-service'
     IMAGE_TAG = "${env.BUILD_NUMBER}"
+    ARGOCD_AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhZG1pbjphcGlLZXkiLCJleHAiOjE3NTczNzg2OTksIm5iZiI6MTc1NDc4NjY5OSwiaWF0IjoxNzU0Nzg2Njk5LCJqdGkiOiJqZW5raW5zIn0.L4YAEEZms1e7GYXGhRNHN7RwNIKZu_T75Dc3aBuQ4a4"
   }
 
   stages {
