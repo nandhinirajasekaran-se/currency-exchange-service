@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: currency-exchange
-          image: 540607980171.dkr.ecr.us-west-2.amazonaws.com/currency-exchange-service:4
+          image: 540607980171.dkr.ecr.us-west-2.amazonaws.com/currency-exchange-service:11
       #- image: mail2nandinirajasekar/mmv3-currency-exchange-service:0.0.2-SNAPSHOT
           imagePullPolicy: IfNotPresent
           readinessProbe:
